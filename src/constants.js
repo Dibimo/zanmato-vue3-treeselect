@@ -49,3 +49,8 @@ export const INPUT_DEBOUNCE_DELAY =
     : /* istanbul ignore next */ 200;
 export const MIN_INPUT_WIDTH = 5;
 export const MENU_BUFFER = 40;
+
+export const DEFAULT_TAG_NAME = "mm-tree-select";
+export const MODEL_EVENT = "update:modelValue";
+
+
