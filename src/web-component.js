@@ -9,10 +9,15 @@ import { DEFAULT_TAG_NAME, MODEL_EVENT } from "./constants";
 // without repeating them here the custom element ends up with none of them
 // wired up as observed attributes/properties (every prop, including
 // `options`, silently does nothing).
+
+const { name: _nameProp, ...customElementProps } = treeselectMixin.props;
+const webComponentMixin = { ...treeselectMixin, props: customElementProps };
+
 const TreeselectElement = defineCustomElement(
   {
     ...Treeselect,
-    props: treeselectMixin.props,
+    mixins: [webComponentMixin],
+    props: customElementProps,
     emits: treeselectMixin.emits
   },
   {
